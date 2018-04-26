@@ -329,6 +329,7 @@ void Start()
             drawPos.z *= 10;
             
             Object.Instantiate(roomObj, drawPos, Quaternion.identity);
+            transform.Rotate(0, 90, 0);
             }
         }
         
