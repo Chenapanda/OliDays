@@ -325,8 +325,8 @@ void Start()
                 }
             PickRoomType(room);
             Vector3 drawPos = new Vector3(room.gridPos.y, 0, room.gridPos.x);
-            drawPos.x *= 20;
-            drawPos.z *= 20;
+            drawPos.x *= 10;
+            drawPos.z *= 10;
             
             Object.Instantiate(roomObj, drawPos, Quaternion.identity);
             }
