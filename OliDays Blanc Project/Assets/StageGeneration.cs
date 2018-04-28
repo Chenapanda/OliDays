@@ -325,8 +325,8 @@ void Start()
                 }
             PickRoomType(room);
             Vector3 drawPos = new Vector3(room.gridPos.y, 0, room.gridPos.x);
-            drawPos.x *= 10;
-            drawPos.z *= 10;
+            drawPos.x *= 9;
+            drawPos.z *= 9;
             
             Object.Instantiate(roomObj, drawPos, Quaternion.identity);
             transform.Rotate(0, 90, 0);
