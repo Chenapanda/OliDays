@@ -11,18 +11,22 @@ public class PlayerMovement : MonoBehaviour {
         
         if (Input.GetKey("z"))
         {
+            //player.AddForce(speed, 0, 0);
             transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey("q"))
         {
+            //player.AddForce(0, 0, speed);
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
         if (Input.GetKey("s"))
         {
+            //player.AddForce(-speed, 0, 0);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey("d"))
         {
+            //player.AddForce(0, 0, -speed);
             transform.Translate(0, 0, -speed * Time.deltaTime);
         }
     }
