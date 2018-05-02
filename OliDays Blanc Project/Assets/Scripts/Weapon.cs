@@ -24,7 +24,8 @@ public class Weapon : MonoBehaviour {
     void GetMouseInput()
     {
         //mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //position of cursor in world
-        mousePos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y) - new Vector3(450, 0, 367); ;
+        mousePos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y) - new Vector3(959, 0, 457);
+        print(mousePos);
         mousePos.y = player.transform.position.y; //keep the z position consistant, since we're in 2d
         mouseVector = (mousePos); //normalized vector from player pointing to cursor
         mouseLeft = Input.GetMouseButton(0); //check left mouse button
