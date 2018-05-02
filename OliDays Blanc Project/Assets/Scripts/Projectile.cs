@@ -30,10 +30,9 @@ public class Projectile : MonoBehaviour
         {
             Destroy(other.gameObject);
             //add an explosion or something
-            //destroy the projectile that just caused the trigger collision
-            Destroy(gameObject);
+            //destroy the projectile that just caused the trigger collision      
         }
-        print("colision");
+        Destroy(gameObject);
     }
     void CheckDisappear()
     {
