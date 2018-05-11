@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     Vector3 dir, nextDir;
-    float speed, startSpeed = .025f;
+    float speed, startSpeed = 5f;
     bool recalling, disappearing;
     Transform recallTarget;
     public void Setup(Vector3 _dir)
@@ -28,9 +28,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            Destroy(other.gameObject);
-            //add an explosion or something
-            //destroy the projectile that just caused the trigger collision      
+            other.GetComponent<enemy>().ishit(5);
         }
         Destroy(gameObject);
     }

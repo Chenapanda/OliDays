@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - enemy
+  - Dreams
   layers:
   - Default
   - TransparentFX
