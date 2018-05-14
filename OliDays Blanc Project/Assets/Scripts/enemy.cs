@@ -6,6 +6,7 @@ public class enemy : MonoBehaviour {
     public GameObject dream;
     public Rigidbody self;
     private int health = 10;
+    private int loot = 20;
     public int Health
     {
         get
@@ -32,7 +33,11 @@ public class enemy : MonoBehaviour {
         Health -= dmg;
         if (Health <= 0)
         {
-            Instantiate(dream, transform.position, new Quaternion(0, 0, 0, 0));
+            if (Random.Range(0, 100) < loot)
+            {
+                Instantiate(dream, transform.position, new Quaternion(0, 0, 0, 0));
+            }
+            
             Destroy(gameObject);
         }
     }

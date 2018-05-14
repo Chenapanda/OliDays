@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     Vector3 dir, nextDir;
-    float speed, startSpeed = 5f;
+    float speed, startSpeed = 7.5f;
     bool recalling, disappearing;
     Transform recallTarget;
     public void Setup(Vector3 _dir)

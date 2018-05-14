@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour {
     Vector3 mousePos, mouseVector;
     public GameObject weapon, weaponTip;
     public GameObject player;
-    float lastShot = 0, timeBetweenShots = .7f;
+    float lastShot = 0, timeBetweenShots = .4f;
     public GameObject bulletPrefab;
     // Use this for initialization
     void Start () {

@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour {
     }
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 100, 20), "Dreams : " + Dreams);
+        GUI.contentColor = Color.magenta;
+        GUI.Label(new Rect(20, 20, 100, 20), "Dreams : " + Dreams);
     }
 
 }
