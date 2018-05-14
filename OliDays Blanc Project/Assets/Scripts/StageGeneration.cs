@@ -10,7 +10,8 @@ public class StageGeneration : MonoBehaviour {
     public int numberofrooms;
     int gridSizeX, gridSizeY, numberOfRooms;
     public GameObject roomObj;
-	
+    public GameObject Terrain;
+    public GameObject enemy;
 // Use this for initialization
 void Start()
 {
@@ -327,10 +328,20 @@ void Start()
             Vector3 drawPos = new Vector3(room.gridPos.y, 0, room.gridPos.x);
             drawPos.x *= 9;
             drawPos.z *= 9;
-            
             Object.Instantiate(roomObj, drawPos, Quaternion.identity);
             transform.Rotate(0, 90, 0);
-            }
+            Vector3 objectPos = new Vector3(drawPos.x + 2 - 3.5f , 0.5f, drawPos.z + 2 - 3.5f);
+            Object.Instantiate(Terrain, objectPos, Quaternion.identity);
+            Object.Instantiate(enemy, objectPos += new Vector3(1, 0, 0), Quaternion.identity);
+            Vector3 objectPos1 = new Vector3(drawPos.x + 2 - 3.5f, 0.5f, drawPos.z + 3 - 3.5f);
+            Object.Instantiate(Terrain, objectPos1, Quaternion.identity);
+            Vector3 objectPos2 = new Vector3(drawPos.x + 2 - 3.5f, 0.5f, drawPos.z + 4 - 3.5f);
+            Object.Instantiate(Terrain, objectPos2, Quaternion.identity);
+            Vector3 objectPos3 = new Vector3(drawPos.x + 2 - 3.5f, 0.5f, drawPos.z + 5 - 3.5f);
+            Object.Instantiate(Terrain, objectPos3, Quaternion.identity);
+            Object.Instantiate(enemy, objectPos3 += new Vector3(1, 0, 0), Quaternion.identity);
+
+        }
         }
         
     

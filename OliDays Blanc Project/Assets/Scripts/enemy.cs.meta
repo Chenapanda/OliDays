@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: a4ff0dc86f4680948bb18598da021680
+timeCreated: 1526331909
+licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dream: {instanceID: 0}
+  - me: {fileID: 1463301620885780, guid: 01daea2cbfe8ed049a5857074dff6e74, type: 2}
+  - self: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

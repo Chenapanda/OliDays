@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour {
     public GameObject dream;
+    public GameObject me;
     public Rigidbody self;
     private int health = 10;
-    private int loot = 20;
+    private int loot = 50;
     public int Health
     {
         get
