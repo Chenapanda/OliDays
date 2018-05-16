@@ -16,7 +16,6 @@ public class Projectile : MonoBehaviour
     void FixedUpdate()
     {
         Move(); //move the bullet
-        CheckDisappear(); //get rid of bullet after it stops moving
     }
     void Move()
     {
@@ -31,24 +30,5 @@ public class Projectile : MonoBehaviour
             other.GetComponent<enemy>().ishit(5);
         }
         Destroy(gameObject);
-    }
-    void CheckDisappear()
-    {
-        if (speed == 0 && !disappearing)
-        { //disappear and destroy when stopped
-            disappearing = true; //so we dont continuelly call the coroutine
-            StartCoroutine(Disappear());
-        }
-    }
-    IEnumerator Disappear()
-    {
-        float curAlpha = 1; //start at full alpha
-        float disSpeed = 3f; //take 1/3 seconds to disappear
-        do
-        {
-            curAlpha -= disSpeed * Time.deltaTime; //find new alpha
-            yield return null;
-        } while (curAlpha > 0); //end when the bullet is transparent
-        Destroy(gameObject); //get rid of bullet now that it can't be seen
     }
 }

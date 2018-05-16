@@ -12,8 +12,12 @@ public class StageGeneration : MonoBehaviour {
     public GameObject roomObj;
     public GameObject Terrain;
     public GameObject enemy;
-// Use this for initialization
-void Start()
+    public GenerateRoom GeneratePatterns = new GenerateRoom();
+    public Texture2D[] patterns;
+    public ColorToPrefabs[] colorMappings;
+
+    // Use this for initialization
+    void Start()
 {
         numberOfRooms = numberofrooms;
         if (numberOfRooms >= (stageSize.x * 2) * (stageSize.y * 2))
@@ -25,6 +29,7 @@ void Start()
         CreateRooms();
         SetRoomDoors();
         DrawMap();
+
 }
     void CreateRooms()
     {
@@ -329,22 +334,48 @@ void Start()
             drawPos.x *= 9;
             drawPos.z *= 9;
             Object.Instantiate(roomObj, drawPos, Quaternion.identity);
-            transform.Rotate(0, 90, 0);
-            Vector3 objectPos = new Vector3(drawPos.x + 2 - 3.5f , 0.5f, drawPos.z + 2 - 3.5f);
-            Object.Instantiate(Terrain, objectPos, Quaternion.identity);
-            Object.Instantiate(enemy, objectPos += new Vector3(1, 0, 0), Quaternion.identity);
-            Vector3 objectPos1 = new Vector3(drawPos.x + 2 - 3.5f, 0.5f, drawPos.z + 3 - 3.5f);
-            Object.Instantiate(Terrain, objectPos1, Quaternion.identity);
-            Vector3 objectPos2 = new Vector3(drawPos.x + 2 - 3.5f, 0.5f, drawPos.z + 4 - 3.5f);
-            Object.Instantiate(Terrain, objectPos2, Quaternion.identity);
-            Vector3 objectPos3 = new Vector3(drawPos.x + 2 - 3.5f, 0.5f, drawPos.z + 5 - 3.5f);
-            Object.Instantiate(Terrain, objectPos3, Quaternion.identity);
-            Object.Instantiate(enemy, objectPos3 += new Vector3(1, 0, 0), Quaternion.identity);
+            GenerateRooms(room);
+            }
+        }
 
+    public void GenerateRooms(Room room)
+    {
+        float x = room.gridPos[0];
+        float y = room.gridPos[1];
+        Texture2D thisroom = patterns[Random.Range(0, patterns.Length)];
+        int length = thisroom.width;
+        for (int i = 0; i < length; i++)
+        {
+            for (int j = 0; j < length; j++)
+            {
+                GenerateTile(i, j, thisroom, room);
+            }
         }
+    }
+    public void GenerateTile(int i, int j, Texture2D thisroom, Room room)
+    {
+        Color pixelColor = thisroom.GetPixel(i, j);
+
+        if (pixelColor.a == 0)
+        {
+            return; //pixel is transparent
         }
-        
-    
+
+        foreach (ColorToPrefabs colorMapping in colorMappings)
+        {
+            if (colorMapping.color.Equals(pixelColor))
+            {
+                if (room.type != 1)
+                {
+                    Vector3 position = new Vector3(room.gridPos.y * 9 - 3.5f + i, 0, room.gridPos.x * 9 - 3.5f + j);
+                    Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
+                }
+                
+            }
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {
