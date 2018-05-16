@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    Vector3 dir, nextDir;
+    Vector3 dir;
     float speed, startSpeed = 7.5f;
-    bool recalling, disappearing;
-    Transform recallTarget;
+
+    
+    
     public void Setup(Vector3 _dir)
     {
         dir = _dir; //passed in from player
@@ -25,10 +26,20 @@ public class Projectile : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Dreams")
+        {
+            return;
+        }
         if (other.gameObject.tag == "enemy")
         {
-            other.GetComponent<enemy>().ishit(5);
+            float dammage = GameObject.Find("Player").GetComponent<PlayerMovement>().Dammage;
+            other.GetComponent<enemy>().ishit(dammage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

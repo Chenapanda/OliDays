@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dream: {fileID: 1740782984362876, guid: 9f63c97e6e69c174dbf228703d9ee59b, type: 2}
+  dreamA: {fileID: 1933531132432148, guid: bf39e8e95722aca41af29864b0942ce7, type: 2}
   me: {fileID: 0}
   self: {fileID: 54863582589066978}
 --- !u!195 &195579590651395120

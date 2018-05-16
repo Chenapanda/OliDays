@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour {
     public GameObject dream;
+    public GameObject dreamA;
     public GameObject me;
     public Rigidbody self;
-    private int health = 10;
+    private float health = 10;
     private int loot = 50;
-    public int Health
+    public float Health
     {
         get
         {
@@ -29,7 +30,7 @@ public class enemy : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void ishit(int dmg)
+    public void ishit(float dmg)
     {
         Health -= dmg;
         if (Health <= 0)
@@ -37,6 +38,7 @@ public class enemy : MonoBehaviour {
             if (Random.Range(0, 100) < loot)
             {
                 Instantiate(dream, transform.position, new Quaternion(0, 0, 0, 0));
+                Instantiate(dreamA, transform.position + new Vector3 (0, .5f, 0), dreamA.transform.rotation);
             }
             Destroy(gameObject);
         }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4a12570b4d6a4164cb779439814da2c5
-timeCreated: 1526330815
+timeCreated: 1526508748
 licenseType: Free
 MonoImporter:
   externalObjects: {}
@@ -23,6 +23,9 @@ MonoImporter:
   - roomUDLR: {instanceID: 0}
   - roomObj: {instanceID: 0}
   - Terrain: {fileID: 1852366132018340, guid: 5189ad5ca5af7ba42b806fe53e0c76b5, type: 2}
+  - enemy: {instanceID: 0}
+  - GeneratePatterns: {instanceID: 0}
+  - player: {fileID: 1980467956410606, guid: ad0a1fabbff7fe641b8b4f9969cfaf4d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

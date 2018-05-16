@@ -6,6 +6,21 @@ public class PlayerMovement : MonoBehaviour {
 
     public Rigidbody player;
     public int speed;
+    public Texture2D Staff;
+
+    private float dammage = 5f;
+    public float Dammage
+    {
+        get
+        {
+            return dammage;
+        }
+        set
+        {
+            dammage = value;
+        }
+    }
+
     private int dreams = 0;
     public int Dreams
     {
@@ -18,6 +33,7 @@ public class PlayerMovement : MonoBehaviour {
             dreams = value;
         }
     }
+
     private void FixedUpdate()
     {
         
@@ -46,6 +62,11 @@ public class PlayerMovement : MonoBehaviour {
     {
         GUI.contentColor = Color.magenta;
         GUI.Label(new Rect(20, 20, 100, 20), "Dreams : " + Dreams);
+        //displays dammage
+        Rect posDammage = new Rect(20, 50, 40, 40);
+        GUI.Label(posDammage, Staff);
+        Rect posDammage2 = new Rect(70, 60, 70, 70);
+        GUI.Label(posDammage2, dammage.ToString());
     }
 
 }
