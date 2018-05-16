@@ -15,7 +15,6 @@ public class StageGeneration : MonoBehaviour {
     public GenerateRoom GeneratePatterns = new GenerateRoom();
     public Texture2D[] patterns;
     public ColorToPrefabs[] colorMappings;
-
     // Use this for initialization
     void Start()
 {
@@ -370,7 +369,6 @@ public class StageGeneration : MonoBehaviour {
                     Vector3 position = new Vector3(room.gridPos.y * 9 - 3.5f + i, 0, room.gridPos.x * 9 - 3.5f + j);
                     Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
                 }
-                
             }
         }
     }
