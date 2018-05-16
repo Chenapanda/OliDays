@@ -38,7 +38,7 @@ public class enemy : MonoBehaviour {
             {
                 Instantiate(dream, transform.position, new Quaternion(0, 0, 0, 0));
             }
-            
+            print("ishit : " + health);
             Destroy(gameObject);
         }
     }

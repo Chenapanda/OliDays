@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour
         {
             other.GetComponent<enemy>().ishit(5);
         }
+        print("ish : ");
         Destroy(gameObject);
     }
     void CheckDisappear()
