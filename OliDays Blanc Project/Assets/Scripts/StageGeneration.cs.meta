@@ -1,11 +1,25 @@
 fileFormatVersion: 2
 guid: 4a12570b4d6a4164cb779439814da2c5
-timeCreated: 1524598637
-licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - roomU: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomD: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomL: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomUD: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomLR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomUR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomUL: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomDR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomDL: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomUDL: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomULR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomUDR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomDLR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomUDLR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
+  - roomObj: {fileID: 1559605696968322, guid: bc25d83ca1277094aa4dd6663036163d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

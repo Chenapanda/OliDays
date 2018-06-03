@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class StageGeneration : MonoBehaviour {
     public GameObject roomU, roomD, roomL, roomR, roomUD, roomLR, roomUR, roomUL, roomDR, roomDL, roomUDL, roomULR, roomUDR, roomDLR, roomUDLR;
-    public Vector2 stageSize;
+    private Vector2 stageSize = new Vector2 (4, 4);
     Room[,] rooms;
     List<Vector2> occupiedPos = new List<Vector2>();
-    public int numberofrooms;
+    private int numberofrooms = 20;
     int gridSizeX, gridSizeY, numberOfRooms;
     public GameObject roomObj;
 	

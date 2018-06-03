@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
+    public GameObject self;
     public Rigidbody player;
     public int speed;
     private int dreams = 0;
@@ -17,6 +18,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             dreams = value;
         }
+    }
+    private void Start()
+    {
+        Instantiate(self);
     }
     private void FixedUpdate()
     {
