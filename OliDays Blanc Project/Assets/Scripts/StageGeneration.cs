@@ -10,9 +10,13 @@ public class StageGeneration : MonoBehaviour {
     private int numberofrooms = 20;
     int gridSizeX, gridSizeY, numberOfRooms;
     public GameObject roomObj;
-	
-// Use this for initialization
-void Start()
+    public GameObject Terrain;
+    public GameObject enemy;
+    public GenerateRoom GeneratePatterns = new GenerateRoom();
+    public Texture2D[] patterns;
+    public ColorToPrefabs[] colorMappings;
+    // Use this for initialization
+    void Start()
 {
         numberOfRooms = numberofrooms;
         if (numberOfRooms >= (stageSize.x * 2) * (stageSize.y * 2))
@@ -24,6 +28,7 @@ void Start()
         CreateRooms();
         SetRoomDoors();
         DrawMap();
+
 }
     void CreateRooms()
     {
@@ -327,13 +332,48 @@ void Start()
             Vector3 drawPos = new Vector3(room.gridPos.y, 0, room.gridPos.x);
             drawPos.x *= 9;
             drawPos.z *= 9;
-            
             Object.Instantiate(roomObj, drawPos, Quaternion.identity);
-            transform.Rotate(0, 90, 0);
+            GenerateRooms(room);
             }
         }
-        
-    
+
+    public void GenerateRooms(Room room)
+    {
+        float x = room.gridPos[0];
+        float y = room.gridPos[1];
+        Texture2D thisroom = patterns[Random.Range(0, patterns.Length)];
+        int length = thisroom.width;
+        for (int i = 0; i < length; i++)
+        {
+            for (int j = 0; j < length; j++)
+            {
+                GenerateTile(i, j, thisroom, room);
+            }
+        }
+    }
+    public void GenerateTile(int i, int j, Texture2D thisroom, Room room)
+    {
+        Color pixelColor = thisroom.GetPixel(i, j);
+
+        if (pixelColor.a == 0)
+        {
+            return; //pixel is transparent
+        }
+
+        foreach (ColorToPrefabs colorMapping in colorMappings)
+        {
+            if (colorMapping.color.Equals(pixelColor))
+            {
+                if (room.type != 1)
+                {
+                    Vector3 position = new Vector3(room.gridPos.y * 9 - 3.5f + i, 0, room.gridPos.x * 9 - 3.5f + j);
+                    Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
+                }
+            }
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {

@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: 4a12570b4d6a4164cb779439814da2c5
+<<<<<<< HEAD
+=======
+timeCreated: 1526508748
+licenseType: Free
+>>>>>>> ae065dd51d7609f295bbb04ce321a7ebb36a130f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+<<<<<<< HEAD
   - roomU: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
   - roomD: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
   - roomL: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
@@ -20,6 +26,28 @@ MonoImporter:
   - roomDLR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
   - roomUDLR: {fileID: 1158203824735348, guid: 08805453469607d40be386937ca85887, type: 2}
   - roomObj: {fileID: 1559605696968322, guid: bc25d83ca1277094aa4dd6663036163d, type: 2}
+=======
+  - roomU: {instanceID: 0}
+  - roomD: {instanceID: 0}
+  - roomL: {instanceID: 0}
+  - roomR: {instanceID: 0}
+  - roomUD: {instanceID: 0}
+  - roomLR: {instanceID: 0}
+  - roomUR: {instanceID: 0}
+  - roomUL: {instanceID: 0}
+  - roomDR: {instanceID: 0}
+  - roomDL: {instanceID: 0}
+  - roomUDL: {instanceID: 0}
+  - roomULR: {instanceID: 0}
+  - roomUDR: {instanceID: 0}
+  - roomDLR: {instanceID: 0}
+  - roomUDLR: {instanceID: 0}
+  - roomObj: {instanceID: 0}
+  - Terrain: {fileID: 1852366132018340, guid: 5189ad5ca5af7ba42b806fe53e0c76b5, type: 2}
+  - enemy: {instanceID: 0}
+  - GeneratePatterns: {instanceID: 0}
+  - player: {fileID: 1980467956410606, guid: ad0a1fabbff7fe641b8b4f9969cfaf4d, type: 2}
+>>>>>>> ae065dd51d7609f295bbb04ce321a7ebb36a130f
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

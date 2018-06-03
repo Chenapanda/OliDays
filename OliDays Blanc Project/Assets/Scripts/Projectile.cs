@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    Vector3 dir, nextDir;
-    float speed, startSpeed = 5f;
-    bool recalling, disappearing;
-    Transform recallTarget;
+    Vector3 dir;
+    float speed, startSpeed = 7.5f;
+
+    
+    
     public void Setup(Vector3 _dir)
     {
         dir = _dir; //passed in from player
@@ -16,7 +17,6 @@ public class Projectile : MonoBehaviour
     void FixedUpdate()
     {
         Move(); //move the bullet
-        CheckDisappear(); //get rid of bullet after it stops moving
     }
     void Move()
     {
@@ -26,29 +26,20 @@ public class Projectile : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Dreams")
+        {
+            return;
+        }
         if (other.gameObject.tag == "enemy")
         {
-            other.GetComponent<enemy>().ishit(5);
+            float dammage = GameObject.Find("Player").GetComponent<PlayerMovement>().Dammage;
+            other.GetComponent<enemy>().ishit(dammage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
-    }
-    void CheckDisappear()
-    {
-        if (speed == 0 && !disappearing)
-        { //disappear and destroy when stopped
-            disappearing = true; //so we dont continuelly call the coroutine
-            StartCoroutine(Disappear());
-        }
-    }
-    IEnumerator Disappear()
-    {
-        float curAlpha = 1; //start at full alpha
-        float disSpeed = 3f; //take 1/3 seconds to disappear
-        do
+        else
         {
-            curAlpha -= disSpeed * Time.deltaTime; //find new alpha
-            yield return null;
-        } while (curAlpha > 0); //end when the bullet is transparent
-        Destroy(gameObject); //get rid of bullet now that it can't be seen
+            Destroy(gameObject);
+        }
+        
     }
 }
