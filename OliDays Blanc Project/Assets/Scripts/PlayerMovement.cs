@@ -34,14 +34,7 @@ public class PlayerMovement : MonoBehaviour {
             dreams = value;
         }
     }
-<<<<<<< HEAD
-    private void Start()
-    {
-        Instantiate(self);
-    }
-=======
 
->>>>>>> ae065dd51d7609f295bbb04ce321a7ebb36a130f
     private void FixedUpdate()
     {
         
